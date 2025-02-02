@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using SampleWebAPI.Interface;
 
 namespace SampleWebAPI.Controllers;
 
@@ -8,8 +9,10 @@ namespace SampleWebAPI.Controllers;
 /// </summary>
 [Route("api/[controller]")]
 [ApiController]
-public class ProductController : ControllerBase
+public class ProductController(IProductService productService) : ControllerBase
 {
+    private readonly IProductService _productService = productService;
+
     /// <summary>
     /// Gets all products.
     /// </summary>
@@ -17,6 +20,7 @@ public class ProductController : ControllerBase
     [HttpGet]
     public IActionResult Get()
     {
-        return Ok("Get all products");
+        var products = _productService.GetProducts();
+        return Ok(products);
     }
 }
