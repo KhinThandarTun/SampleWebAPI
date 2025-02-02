@@ -22,12 +22,17 @@ var app = builder.Build();
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {
-    app.UseSwagger();
-    app.UseSwaggerUI(c =>
-    {
-        c.SwaggerEndpoint("/swagger/v1/swagger.json", "My OpenAPI Project v1");
-    });
+    
 }
+
+app.UseSwagger();
+app.UseSwaggerUI(c =>
+{
+    c.SwaggerEndpoint("/swagger/v1/swagger.json", "My OpenAPI Project v1");
+});
+
+// Serve Scalar
+app.UseStaticFiles(); // Serve static files (if Scalar is hosted locally)
 
 app.UseHttpsRedirection();
 app.UseAuthorization();
