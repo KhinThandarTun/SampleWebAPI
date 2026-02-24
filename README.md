@@ -1,11 +1,11 @@
-``` bash
+```bash
 php artisan optimize:clear
-``` bash
+```
 
-``` bash
+```bash
 php artisan config:clear
-``` bash
+```
 
-``` bash
+```bash
 php artisan route:clear
-``` bash
+```
