@@ -1,3 +1,11 @@
-`php artisan optimize:clear
+``` bash
+php artisan optimize:clear
+``` bash
+
+``` bash
 php artisan config:clear
-php artisan route:clear`
+``` bash
+
+``` bash
+php artisan route:clear
+``` bash
